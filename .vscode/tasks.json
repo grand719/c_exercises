@@ -2,6 +2,15 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "checkBuildFolder",
+      "type": "shell",
+      "command": "mkdir",
+      "args": ["-p", "${workspaceFolder}/build"],
+      "presentation": {
+        "reveal": "never"
+      }
+    },
+    {
       "label": "build",
       "type": "shell",
       "command": "gcc",
@@ -9,15 +18,19 @@
         "-g",
         "${file}",
         "-o",
-        "${fileDirname}/${fileBasenameNoExtension}"
+        "${workspaceFolder}/build/${fileBasenameNoExtension}"
       ],
       "group": {
         "kind": "build",
         "isDefault": true
       },
+      "dependsOn": "checkBuildFolder",
       "presentation": {
         "reveal": "always",
         "panel": "new"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}/build"
       }
     }
   ]
