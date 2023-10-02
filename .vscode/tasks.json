@@ -16,9 +16,9 @@
       "command": "gcc",
       "args": [
         "-g",
-        "${file}",
         "-o",
-        "${workspaceFolder}/build/${fileBasenameNoExtension}"
+        "${workspaceFolder}/build/${fileBasenameNoExtension}",
+        "${file}"
       ],
       "group": {
         "kind": "build",

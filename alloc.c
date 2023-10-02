@@ -14,6 +14,7 @@ char *alloc(int n)
     }
     else
     {
+        printf("not enougth space");
         return 0;
     }
 }
@@ -38,31 +39,7 @@ int strlem(char *s)
 int main(int argc, char const *argv[])
 {
 
-    int test[10] = {3, 4, 8, 4, 5, 6, 7, 8, 9, 3};
-    int slow = test[0];
-    int fast = test[0];
-
-    int testt = test[0];
-    /*     printf("%d\n", testt);
-        testt = test[testt];
-        printf("%d\n", testt); */
-    printf("%d-%d\n", testt, test[3]);
-    testt = test[test[3]];
-    printf("%d\n", testt);
-    do
-    {
-        slow = test[slow];
-        fast = test[test[fast]];
-    } while (slow != fast);
-
-    fast = test[0];
-
-    while (slow != fast)
-    {
-        slow = test[slow];
-        fast = test[fast];
-    }
-    printf("%d", fast);
+    alloc(500);
 
     return 0;
 }
